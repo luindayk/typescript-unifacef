@@ -2,6 +2,30 @@ import axios from 'axios';
 
 const baseURL = 'https://swapi.co/api/';
 
+export interface ResultFilms {
+    title: string;
+    episode_id: number;
+    opening_crawl: string;
+    director: string;
+    producer: string;
+    release_date: string;
+    characters: string[];
+    planets: string[];
+    starships: string[];
+    vehicles: string[];
+    species: string[];
+    created: Date;
+    edited: Date;
+    url: string;
+}
+
+export interface RootFilms {
+    count: number;
+    next?: any;
+    previous?: any;
+    results: ResultFilms[];
+}
+
 export const getFilms = async () => {
     try {
         const { data: { results } } = await axios.request({ baseURL, url: 'films' });

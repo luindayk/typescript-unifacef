@@ -34,5 +34,20 @@
                 "${workspaceFolder}/teste.ts"
             ]
         },
+        {
+            "type": "node",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**/*.js"
+            ],
+            "name": "Teste Github [TS-Node]",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "args": [
+                "${workspaceFolder}/github-api.ts"
+            ]
+        },
     ]
 }
